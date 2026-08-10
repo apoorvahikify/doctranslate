@@ -1,44 +1,177 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Translator Engine AI</title>
-    <link rel="stylesheet" th:href="@{/style.css}" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DocTranslate - AI Translation</title>
+
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h2>Document & Text Translator Engine</h2>
 
+<div class="page">
+
+    <!-- Header -->
+    <header class="hero">
+
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>DocTranslate</span>
+        </div>
+
+        <div class="hero-badge">
+            ✨ AI-Powered Translation
+        </div>
+
+        <h1>
+            Translate Anything.<br>
+            <span>Understand Everything.</span>
+        </h1>
+
+        <p>
+            Translate documents, images and text quickly into your
+            preferred language with our simple translation engine.
+        </p>
+
+    </header>
+
+
+    <!-- Main translator -->
+    <main class="translator-card">
+
+        <!-- Language -->
         <div class="input-section">
-            <label for="targetLang">Select Target Language:</label>
+
+            <label for="targetLang">
+                🌐 Select Target Language
+            </label>
+
             <select id="targetLang">
-                <option value="kn" selected>Kannada</option>
-                <option value="hi">Hindi</option>
-                <option value="ta">Tamil</option>
-                <option value="ml">Malayalam</option>
-                <option value="ja">Japanese</option>
-                <option value="en">English</option>
+
+                <option value="kn" selected>🇮🇳 Kannada</option>
+                <option value="hi">🇮🇳 Hindi</option>
+                <option value="ta">🇮🇳 Tamil</option>
+                <option value="ml">🇮🇳 Malayalam</option>
+                <option value="ja">🇯🇵 Japanese</option>
+                <option value="en">🇬🇧 English</option>
+
             </select>
+
         </div>
 
+
+        <!-- Upload File -->
         <div class="upload-section">
-            <h3>Upload File (PDF, DOCX, Image, TXT)</h3>
-            <input type="file" id="fileInput">
-            <button onclick="uploadFile()">Translate File</button>
+
+            <div class="section-icon">📄</div>
+
+            <div class="section-heading">
+                <h2>Translate a File</h2>
+
+                <p>
+                    Upload PDF, DOCX, TXT or an image
+                </p>
+            </div>
+
+            <div class="upload-box">
+
+                <div class="upload-icon">
+                    ☁
+                </div>
+
+                <p class="upload-title">
+                    Choose a file to translate
+                </p>
+
+                <p class="upload-subtitle">
+                    PDF • DOCX • JPG • PNG • TXT
+                </p>
+
+                <input type="file" id="fileInput">
+
+            </div>
+
+            <button class="primary-btn" onclick="uploadFile()">
+                <span>Translate File</span>
+                <span>→</span>
+            </button>
+
         </div>
 
+
+        <!-- Divider -->
+
+        <div class="or-divider">
+            <span>OR</span>
+        </div>
+
+
+        <!-- Direct Text -->
         <div class="text-section">
-            <h3>Direct Text Translation</h3>
-            <textarea id="directText" placeholder="Enter text here..."></textarea>
-            <button onclick="translateText()">Translate Text</button>
+
+            <div class="section-icon">✍️</div>
+
+            <div class="section-heading">
+                <h2>Translate Text</h2>
+
+                <p>
+                    Enter your text and get an instant translation
+                </p>
+            </div>
+
+            <textarea
+                id="directText"
+                placeholder="Type or paste your text here..."
+            ></textarea>
+
+            <button class="secondary-btn" onclick="translateText()">
+                <span>Translate Text</span>
+                <span>→</span>
+            </button>
+
         </div>
 
+
+        <!-- Result -->
         <div class="output-section">
-            <h3>Translation Result:</h3>
-            <pre id="outputResult"></pre>
-        </div>
-    </div>
 
-    <script th:src="@{/script.js}" src="/script.js"></script>
+            <div class="result-header">
+
+                <div>
+                    <div class="section-icon result-icon">✨</div>
+
+                    <div>
+                        <h2>Translation Result</h2>
+
+                        <p>Your translated content will appear here</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <pre id="outputResult">Your translation will appear here...</pre>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            🌍 DocTranslate &nbsp;•&nbsp;
+            Translate smarter, communicate better.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="/script.js"></script>
+
 </body>
 </html>
